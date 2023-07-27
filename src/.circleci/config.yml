@@ -1,0 +1,23 @@
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: openjdk:11
+
+    steps:
+      - checkout
+
+      # Install any dependencies your project might have.
+      - run: ./gradlew assemble
+
+      # Run tests on pull requests targeting the development branch
+      - run:
+          name: Run Tests
+          command: ./gradlew test
+
+      # Build the application for pull requests targeting the master branch
+      - run:
+          name: Build Application
+          command: ./gradlew build
+
+
