@@ -17,5 +17,8 @@ public class MainTest {
 
         int result3 = Main.count(-2, 7);
         assertEquals(5, result3);
+
+        int result4 = Main.count(1,6);
+        assertEquals(5,result4);
     }
 }
